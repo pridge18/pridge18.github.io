@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<script>
+var wsUri = "wss://localhost:3000/";
+
+try
+{
+    var websocketExample = new WebSocket(wsUri);
+	var websocketExample2 = new WebSocket(wsUri);
+	var websocketExample3 = new WebSocket(wsUri);
+	var websocketExample4 = new WebSocket(wsUri);
+	var websocketExample5 = new WebSocket(wsUri);
+	var websocketExample6 = new WebSocket(wsUri);
+	var websocketExample7 = new WebSocket(wsUri);
+	var websocketExample8 = new WebSocket(wsUri);
+	var websocketExample9 = new WebSocket(wsUri);
+}
+catch(err)
+{
+alert(err);
+    onError(err);
+}
+websocketExample.onerror = function(evt) { onThisError(evt); };
+websocketExample.onmessage = function(evt) { onThisMessage(evt); };
+
+function onThisError(evt) {
+    writeToThisScreen('ERROR:' + evt.data);   
+}
+websocketExample.onopen = function(evt) { onThisOpen(evt); };
+websocketExample2.onopen = function(evt) { onThisOpen(evt); };
+websocketExample3.onopen = function(evt) { onThisOpen(evt); };
+websocketExample4.onopen = function(evt) { onThisOpen(evt); };
+websocketExample5.onopen = function(evt) { onThisOpen(evt); };
+websocketExample6.onopen = function(evt) { onThisOpen(evt); };
+websocketExample7.onopen = function(evt) { onThisOpen(evt); };
+websocketExample8.onopen = function(evt) { onThisOpen(evt); };
+websocketExample9.onopen = function(evt) { onThisOpen(evt); };
+
+function writeToThisScreen(message) {
+alert(message)
+    //var output = document.getElementById("output");
+    //output.innerHTML += '<div><p>'+message+'</p></div>';
+}
+function onThisOpen() {
+    writeToThisScreen("Connected to " + wsUri);
+    websocketExample.send('hello');
+    
+}
+function onThisMessage(evt) {
+alert("onthismessage");
+    writeToThisScreen("Received from server: " + evt.data);
+}
+function closeThisConnection()
+{
+    websocketExample.close();
+}
+function sendThisMessage()
+{
+    websocketExample.send(document.getElementById('message').value);
+}
+document.addEventListener('DOMContentReady', function () { document.getElementById('sendMsg').addEventListener('click', websocketExample.send(document.getElementById('message').value)); });
+</script>
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+
+</body>
+</html> 
