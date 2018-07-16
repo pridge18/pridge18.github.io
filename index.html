@@ -40,7 +40,6 @@ websocketExample8.onopen = function(evt) { onThisOpen(evt); };
 websocketExample9.onopen = function(evt) { onThisOpen(evt); };
 
 function writeToThisScreen(message) {
-alert(message)
     var output = document.getElementById("output");
     output.innerHTML += '<div><p>'+message+'</p></div>';
 }
@@ -50,7 +49,6 @@ function onThisOpen() {
     
 }
 function onThisMessage(evt) {
-alert("onthismessage");
     writeToThisScreen("Received from server: " + evt.data);
 }
 function closeThisConnection()
