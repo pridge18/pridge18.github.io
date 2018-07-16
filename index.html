@@ -5,38 +5,13 @@
 </head>
 <script>
 var wsUri = "wss://localhost:3000/";
-
+var websocketExample = [];
 try
 {
-    var websocketExample = new WebSocket(wsUri);
-	var websocketExample2 = new WebSocket(wsUri);
-	var websocketExample3 = new WebSocket(wsUri);
-	var websocketExample4 = new WebSocket(wsUri);
-	var websocketExample5 = new WebSocket(wsUri);
-	var websocketExample6 = new WebSocket(wsUri);
-	var websocketExample7 = new WebSocket(wsUri);
-	var websocketExample8 = new WebSocket(wsUri);
-	var websocketExample9 = new WebSocket(wsUri);
-	var websocketExample20 = new WebSocket(wsUri);
-	var websocketExample21 = new WebSocket(wsUri);
-	var websocketExample22 = new WebSocket(wsUri);
-	var websocketExample23 = new WebSocket(wsUri);
-	var websocketExample24 = new WebSocket(wsUri);
-	var websocketExample25 = new WebSocket(wsUri);
-	var websocketExample26 = new WebSocket(wsUri);
-	var websocketExample27 = new WebSocket(wsUri);
-	var websocketExample28 = new WebSocket(wsUri);
-	var websocketExample29 = new WebSocket(wsUri);
-	var websocketExample30 = new WebSocket(wsUri);
-	var websocketExample31 = new WebSocket(wsUri);
-	var websocketExample32 = new WebSocket(wsUri);
-	var websocketExample33 = new WebSocket(wsUri);
-	var websocketExample34 = new WebSocket(wsUri);
-	var websocketExample35 = new WebSocket(wsUri);
-	var websocketExample36 = new WebSocket(wsUri);
-	var websocketExample37 = new WebSocket(wsUri);
-	var websocketExample38 = new WebSocket(wsUri);
-	var websocketExample39 = new WebSocket(wsUri);
+	for (var i = 0; i <= 10; ++i) {
+		websocketExample[i] = new WebSocket(wsUri);
+		websocketExample[i].onopen = function(evt) { onThisOpen(evt); };
+	}
 }
 catch(err)
 {
@@ -49,35 +24,6 @@ websocketExample.onmessage = function(evt) { onThisMessage(evt); };
 function onThisError(evt) {
     writeToThisScreen('ERROR:' + evt.data);   
 }
-websocketExample.onopen = function(evt) { onThisOpen(evt); };
-websocketExample2.onopen = function(evt) { onThisOpen(evt); };
-websocketExample3.onopen = function(evt) { onThisOpen(evt); };
-websocketExample4.onopen = function(evt) { onThisOpen(evt); };
-websocketExample5.onopen = function(evt) { onThisOpen(evt); };
-websocketExample6.onopen = function(evt) { onThisOpen(evt); };
-websocketExample7.onopen = function(evt) { onThisOpen(evt); };
-websocketExample8.onopen = function(evt) { onThisOpen(evt); };
-websocketExample9.onopen = function(evt) { onThisOpen(evt); };
-websocketExample20.onopen = function(evt) { onThisOpen(evt); };
-websocketExample21.onopen = function(evt) { onThisOpen(evt); };
-websocketExample22.onopen = function(evt) { onThisOpen(evt); };
-websocketExample23.onopen = function(evt) { onThisOpen(evt); };
-websocketExample24.onopen = function(evt) { onThisOpen(evt); };
-websocketExample25.onopen = function(evt) { onThisOpen(evt); };
-websocketExample26.onopen = function(evt) { onThisOpen(evt); };
-websocketExample27.onopen = function(evt) { onThisOpen(evt); };
-websocketExample28.onopen = function(evt) { onThisOpen(evt); };
-websocketExample29.onopen = function(evt) { onThisOpen(evt); };
-websocketExample30.onopen = function(evt) { onThisOpen(evt); };
-websocketExample31.onopen = function(evt) { onThisOpen(evt); };
-websocketExample32.onopen = function(evt) { onThisOpen(evt); };
-websocketExample33.onopen = function(evt) { onThisOpen(evt); };
-websocketExample34.onopen = function(evt) { onThisOpen(evt); };
-websocketExample35.onopen = function(evt) { onThisOpen(evt); };
-websocketExample36.onopen = function(evt) { onThisOpen(evt); };
-websocketExample37.onopen = function(evt) { onThisOpen(evt); };
-websocketExample38.onopen = function(evt) { onThisOpen(evt); };
-websocketExample39.onopen = function(evt) { onThisOpen(evt); };
 
 function writeToThisScreen(message) {
     var output = document.getElementById("output");
