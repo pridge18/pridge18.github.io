@@ -8,9 +8,8 @@ var wsUri = "wss://localhost:3000/";
 var websocketExample = [];
 try
 {
-	for (var i = 0; i < 100000; ++i) {
+	for (var i = 0; i < 5; ++i) {
 		websocketExample[i] = new WebSocket(wsUri);
-		websocketExample[i].onopen = function(evt) { onThisOpen(evt); };
 	}
 }
 catch(err)
@@ -24,6 +23,9 @@ websocketExample.onmessage = function(evt) { onThisMessage(evt); };
 function onThisError(evt) {
     writeToThisScreen('ERROR:' + evt.data);   
 }
+//for (var i = 0; i < 5; ++i) {
+//	websocketExample[i].onopen = function(evt) { onThisOpen(evt); };
+//}
 
 function writeToThisScreen(message) {
     var output = document.getElementById("output");
